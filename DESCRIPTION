@@ -1,0 +1,26 @@
+Type: Package
+Package: repractice
+Title: A Framework for Reproducible Practice Problems
+Version: 0.1.0
+Description: A portable framework for randomizable logic and markdown
+    templating, with a focus on generating combinatorially variable
+    practice problems and solutions.
+License: MIT + file LICENSE
+Imports: 
+    dplyr,
+    glue,
+    knitr,
+    markdown,
+    shiny,
+    stringr,
+    tibble
+Suggests: 
+    testthat (>= 3.0.0)
+Authors@R: person("Michael", "Karcher",
+    email="michael.d.karcher@gmail.com", role=c("aut", "cre"),
+    comment=c(ORCID="0000-0002-8615-6078"))
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
+Roxygen: list(markdown = TRUE)
