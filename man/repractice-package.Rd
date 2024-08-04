@@ -8,4 +8,17 @@
 \description{
 A portable framework for randomizable logic and markdown templating, with a focus on generating combinatorially variable practice problems and solutions.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/mdkarcher/repractice}
+  \item \url{https://mdkarcher.github.io/repractice/}
+  \item Report bugs at \url{https://github.com/mdkarcher/repractice/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Michael Karcher \email{michael.d.karcher@gmail.com} (\href{https://orcid.org/0000-0002-8615-6078}{ORCID})
+
+}
 \keyword{internal}
