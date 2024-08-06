@@ -85,8 +85,10 @@ raw-string-friendly defaults.</p>
 <span class="r-in"><span><span class="fu">compile_text</span><span class="op">(</span><span class="st">"My name is &lt;&lt;name&gt;&gt;, and I teach &lt;&lt;subject&gt;&gt;."</span>, vars <span class="op">=</span> <span class="va">details</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> My name is Michael, and I teach statistics.</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">setup</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>exponent <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">compile_text</span><span class="op">(</span><span class="st">r"(The derivative of $\pm C x^&lt;&lt;exponent&gt;&gt;$ is $\pm &lt;&lt;exponent&gt;&gt; C x^&lt;&lt;exponent-1&gt;&gt;$)"</span>, vars <span class="op">=</span> <span class="va">setup</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">setup</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>ex <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">compile_text</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="st">r"(The derivative of $\pm C x^&lt;&lt;ex&gt;&gt;$ is $\pm &lt;&lt;ex&gt;&gt; C x^&lt;&lt;ex-1&gt;&gt;$)"</span>,</span></span>
+<span class="r-in"><span>  vars <span class="op">=</span> <span class="va">setup</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> The derivative of $\pm C x^3$ is $\pm 3 C x^2$</span>
 </code></pre></div>
     </div>
