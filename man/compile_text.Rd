@@ -34,6 +34,8 @@ raw-string-friendly defaults.
 details <- list(name = "Michael", subject="statistics")
 compile_text("My name is <<name>>, and I teach <<subject>>.", vars = details)
 
-setup <- list(exponent = 3)
-compile_text(r"(The derivative of $\pm C x^<<exponent>>$ is $\pm <<exponent>> C x^<<exponent-1>>$)", vars = setup)
+setup <- list(ex = 3)
+compile_text(
+  r"(The derivative of $\pm C x^<<ex>>$ is $\pm <<ex>> C x^<<ex-1>>$)",
+  vars = setup)
 }

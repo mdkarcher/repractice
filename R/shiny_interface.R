@@ -39,11 +39,11 @@ problemServer = function(id, problemset) {
     function(input, output, session) {
       observe({
         updateCheckboxInput(session, "show_solution", value = FALSE)
-      }) %>% bindEvent(input$new_problem)
+      }) |> bindEvent(input$new_problem)
 
       problem <- reactive({
         sample_problem(problemset)
-      }) %>% bindEvent(input$new_problem, ignoreNULL = FALSE)
+      }) |> bindEvent(input$new_problem, ignoreNULL = FALSE)
 
       observe({
         pr = problem()
@@ -195,10 +195,12 @@ make_tabbed_server = function(problemset_list, title="Practice") {
 #'
 #' percent_problems = build_problemset(list(
 #'   simple_percent,
-#'   simple_percent_successes,
+#'   simple_percent_successes
 #' ), title="Percents")
 #'
+#' \dontrun{
 #' repractice_shiny_tabbed(list(prop_problems, percent_problems))
+#' }
 repractice_shiny_tabbed <- function(problemset_list) {
   ui <- make_tabbed_ui(problemset_list)
   server <- make_tabbed_server(problemset_list)

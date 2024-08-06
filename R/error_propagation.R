@@ -24,6 +24,7 @@ ceilingk = function(x, k=0) {
 }
 
 #' @rdname ceilingk
+#' @export
 floork = function(x, k=0) {
   if (is.infinite(k)) {
     return(x)
@@ -37,11 +38,11 @@ eprop = function(params, code, digits=Inf, interpolate=1) {
   interpolations = matrix(NA, nrow=interpolate, ncol=ncol(params))
   colnames(interpolations) = names(params)
   for (i in 1:ncol(params)) {
-    interpolations[,i] = seq(min(params[,i]), max(params[,i]), length.out=interpolate+2) %>% head(-1) %>% tail(-1)
+    interpolations[,i] = utils::tail(utils::head(seq(min(params[,i]), max(params[,i]), length.out=interpolate+2),-1),-1)
   }
-  interp_params = bind_rows(params, as_tibble(interpolations))
+  interp_params = dplyr::bind_rows(params, tibble::as_tibble(interpolations))
 
-  expanded_params = expand_grid(!!!interp_params)
+  expanded_params = tidyr::expand_grid(!!!interp_params)
 
   all_results = rep(NA, nrow(expanded_params))
   for (i in 1:nrow(expanded_params)) {

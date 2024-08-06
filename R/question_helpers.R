@@ -59,27 +59,6 @@ wrapif = function(x, cond = is_neg, left = '(', right = ')') {
   return(x)
 }
 
-#' Expand inequality symbol to word
-#'
-#' @param gtlt ">" or "<"
-#' @param capitalize logical whether to capitalize the first letter.
-#'
-#' @return string containing "greater" or "less", potentially capitalized.
-#'
-#' @examples
-#' greater_less("<")
-greater_less = function(gtlt, capitalize=FALSE) {
-  if (!(gtlt %in% c(">", "<")))
-    stop("Argument gtlt not one of '>' or '<'.")
-  if (gtlt == ">") {
-    result = "greater"
-  } else {
-    result = "less"
-  }
-  if (capitalize)
-    result = stringr::str_to_title(result)
-  return(result)
-}
 
 #' Concatenate a list with commands and a concluding "and"
 #'
@@ -139,6 +118,15 @@ comp = function(a, b) {
 }
 
 
+#' Generate table of quiz points
+#'
+#' @param pts vector of point values.
+#'
+#' @return string containing a points block as rendered by [knitr::kable()].
+#' @export
+#'
+#' @examples
+#' points_block(c(10,15,20))
 points_block = function(pts) {
   total = sum(pts)
   qnums = as.character(1:length(pts))

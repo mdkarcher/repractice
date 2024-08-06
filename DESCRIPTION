@@ -13,7 +13,9 @@ Imports:
     markdown,
     shiny,
     stringr,
-    tibble
+    tibble,
+    tidyr,
+    withr
 Suggests: 
     testthat (>= 3.0.0)
 Authors@R: person("Michael", "Karcher",

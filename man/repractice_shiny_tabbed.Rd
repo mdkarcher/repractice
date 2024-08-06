@@ -25,8 +25,10 @@ prop_problems = build_problemset(list(
 
 percent_problems = build_problemset(list(
   simple_percent,
-  simple_percent_successes,
+  simple_percent_successes
 ), title="Percents")
 
+\dontrun{
 repractice_shiny_tabbed(list(prop_problems, percent_problems))
+}
 }

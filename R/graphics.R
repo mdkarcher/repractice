@@ -38,7 +38,7 @@ hist_to_dotplot = function(hist_out, xlim=NULL, ylim=NULL, ...) {
 #' @examples
 #' dotplot(c(1,2,3,3,5,5,5,5,6,7,7,9))
 dotplot = function(x, breaks="Sturges", xlim=NULL, ylim=NULL, plot=TRUE, xlab=NULL, ylab="Count", ...) {
-  hist_out = hist(x, breaks=breaks, plot=FALSE)
+  hist_out = graphics::hist(x, breaks=breaks, plot=FALSE)
   stacks = hist_to_stacks(hist_out)
   if (is.null(xlim)) {
     xlim = range(hist_out$breaks)
