@@ -15,19 +15,21 @@ compile_text(
 \arguments{
 \item{text}{string Input template string.}
 
-\item{vars}{listish List or environment containing variables to make available for string interpolation. Defaults to \code{parent.frame()}.}
+\item{vars}{listish List or environment containing variables to make
+available for string interpolation. Defaults to \code{parent.frame()}.}
 
 \item{open}{string Opening delimiter. Defaults to "<<".}
 
 \item{close}{string Closing delimiter. Defaults to ">>".}
 
-\item{trim}{logical Whether to trim \code{text} with \code{\link[glue:trim]{glue::trim()}} or not. Unlike \code{\link[glue:glue]{glue::glue()}}, defaults to \code{FALSE}.}
+\item{trim}{logical Whether to trim \code{text} with \code{\link[glue:trim]{glue::trim()}} or not. Unlike
+\code{\link[glue:glue]{glue::glue()}}, defaults to \code{FALSE}.}
 }
 \value{
 A glue object.
 }
 \description{
-Wrapper for the \code{\link[glue:glue]{glue::glue()}} function with more LaTeX-friendly and
+Wrapper for the \code{\link[glue:glue]{glue::glue_data()}} function with more LaTeX- and
 raw-string-friendly defaults.
 }
 \examples{
