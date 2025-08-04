@@ -1,14 +1,16 @@
 
 #' LaTeX-friendly string interpolation
 #'
-#' Wrapper for the [glue::glue()] function with more LaTeX-friendly and
+#' Wrapper for the [glue::glue_data()] function with more LaTeX- and
 #' raw-string-friendly defaults.
 #'
 #' @param text string Input template string.
-#' @param vars listish List or environment containing variables to make available for string interpolation. Defaults to `parent.frame()`.
+#' @param vars listish List or environment containing variables to make
+#'   available for string interpolation. Defaults to `parent.frame()`.
 #' @param open string Opening delimiter. Defaults to "<<".
 #' @param close string Closing delimiter. Defaults to ">>".
-#' @param trim logical Whether to trim `text` with [glue::trim()] or not. Unlike [glue::glue()], defaults to `FALSE`.
+#' @param trim logical Whether to trim `text` with [glue::trim()] or not. Unlike
+#'   [glue::glue()], defaults to `FALSE`.
 #'
 #' @return A glue object.
 #' @export
@@ -22,7 +24,7 @@
 #'   r"(The derivative of $\pm C x^<<ex>>$ is $\pm <<ex>> C x^<<ex-1>>$)",
 #'   vars = setup)
 compile_text = function(text, vars=parent.frame(), open="<<", close=">>", trim=FALSE) {
-  return(glue(text, .envir = vars, .open = open, .close = close, .trim=trim))
+  return(glue::glue_data(text, .x = vars, .open = open, .close = close, .trim=trim))
 }
 
 compile_figure = function(func, vars) {
