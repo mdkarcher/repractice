@@ -10,6 +10,9 @@ name: Build and deploy wasm R package image
 jobs:
   release-file-system-image:
     uses: r-wasm/actions/.github/workflows/release-file-system-image.yml@v2
+    with:
+      packages: "knitr, litedown, shiny, stringr, tidyr"
+      strip: "demo, doc, examples, help, html, include, tests, vignette"
     permissions:
       # For publishing artifact files to the release
       contents: write
