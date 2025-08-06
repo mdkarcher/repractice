@@ -11,7 +11,7 @@ jobs:
   release-file-system-image:
     uses: r-wasm/actions/.github/workflows/release-file-system-image.yml@v2
     with:
-      packages: "knitr, litedown, shiny, stringr, tidyr"
+      packages: "cpp11, purrr, stringi, httpuv, mime, xtable, fontawesome, htmltools, sourcetools, later, promises, crayon, fastmap, bslib, cachem, commonmark, evaluate, highr, xfun, yaml, knitr, litedown, shiny, stringr, tidyr"
       strip: "demo, doc, examples, help, html, include, tests, vignette"
     permissions:
       # For publishing artifact files to the release
