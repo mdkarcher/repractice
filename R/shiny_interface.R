@@ -101,7 +101,7 @@ problemServer = function(id, problemset) {
         pr = problem()
         withMathJax(
           # HTML(markdown_html(all_questions(pr)))
-          HTML(markdown::mark_html(text=all_questions(pr), options = "-standalone"))
+          HTML(litedown::mark(text=all_questions(pr), options = "-standalone"))
         )
       })
 
@@ -134,7 +134,7 @@ problemServer = function(id, problemset) {
         pr = problem()
         withMathJax(
           # HTML(markdown_html(all_solutions(pr)))
-          HTML(markdown::mark_html(text=all_solutions(pr), options = "-standalone"))
+          HTML(litedown::mark(text=all_solutions(pr), options = "-standalone"))
         )
       })
     }

@@ -10,7 +10,7 @@ Imports:
     dplyr,
     glue,
     knitr,
-    markdown,
+    litedown,
     shiny,
     stringr,
     tibble,
