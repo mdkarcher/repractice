@@ -27,6 +27,23 @@ compile_text = function(text, vars=parent.frame(), open="<<", close=">>", trim=F
   return(glue::glue_data(text, .x = vars, .open = open, .close = close, .trim=trim))
 }
 
+
+#' Pre-specify plotting function arguments
+#'
+#' @param func function Plotting function with single argument taking a list of
+#'   plotting variables.
+#' @param vars listish List or environment containing variables to make
+#'   available for string interpolation. Defaults to `parent.frame()`.
+#'
+#' @returns A function with no arguments that uses the original function on the
+#'   variables in vars.
+#' @export
+#'
+#' @examples
+#' vars <- list(x = 1:5, y = 5:1)
+#' func <- function(args) plot(args$x, args$y, pch=19)
+#' func_noargs <- compile_figure(func, vars)
+#' func_noargs()
 compile_figure = function(func, vars) {
   return(function() {func(vars)})
 }
